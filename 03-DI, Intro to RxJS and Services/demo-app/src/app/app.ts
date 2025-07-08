@@ -30,5 +30,8 @@ export class App {
     };
 
     this.appUsers.push(user);
+
+    inputName.value = '';
+    inputAge.value = '';
   }
 }
