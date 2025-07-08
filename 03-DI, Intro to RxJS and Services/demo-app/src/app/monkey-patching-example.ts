@@ -1,3 +1,5 @@
+// How zone.js notifies Angular for async requests
+
 // Standard console log
 console.log(123);
 
