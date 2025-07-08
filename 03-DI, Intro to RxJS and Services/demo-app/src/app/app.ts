@@ -22,4 +22,9 @@ export class App {
   handleClick() {
     this.title = 'New text';
   }
+
+  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
+    console.log(inputName.value);
+    console.log(inputAge.value);
+  }
 }
