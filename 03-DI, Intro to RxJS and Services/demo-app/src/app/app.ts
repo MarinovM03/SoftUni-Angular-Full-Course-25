@@ -30,8 +30,12 @@ export class App {
     };
 
     this.appUsers.push(user);
+    // this.appUsers = [...this.appUsers, user];  //! Important `HACK` we can use
 
     inputName.value = '';
     inputAge.value = '';
+
+    console.log(this.appUsers);
+    
   }
 }
