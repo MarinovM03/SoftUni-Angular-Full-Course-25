@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserList } from './user-list/user-list';
+import { SimpleUser } from './types';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { UserList } from './user-list/user-list';
 export class App {
   protected title = 'demo-app';
 
-  appUsers = [
+  appUsers: SimpleUser[] = [
     { name: 'Martin', age: 21},
     { name: 'Ivo', age: 34},
     { name: 'Peter', age: 42},

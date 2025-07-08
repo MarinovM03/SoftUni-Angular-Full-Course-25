@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserItem } from './user-item/user-item';
+import { SimpleUser } from '../types';
 
 @Component({
   selector: 'app-user-list',
@@ -9,5 +10,5 @@ import { UserItem } from './user-item/user-item';
   styleUrl: './user-list.css'
 })
 export class UserList {
-  @Input('users') usersList = [];
+  @Input('users') usersList: SimpleUser[] = [];
 }
