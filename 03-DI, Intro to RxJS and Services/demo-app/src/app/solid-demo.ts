@@ -28,3 +28,35 @@ class Wallet {
 
     withdrawMoney() {}
 }
+
+
+// Interface Segregation
+interface Address {
+    str: string,
+    country: string,
+}
+
+interface WalletDetails {
+    type: string;
+    balance: number;
+    currency: string;
+}
+
+interface PersonPrivateDetails {
+    firstName: string;
+    lastName: string;
+}
+
+interface PersonPublicDetails extends PersonPrivateDetails, WalletDetails{
+    adress: Address;
+}
+
+class Person implements PersonPrivateDetails {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
