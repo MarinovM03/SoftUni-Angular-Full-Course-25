@@ -8,7 +8,7 @@ import { SimpleUser } from './types';
   standalone: true,
   imports: [RouterOutlet, UserList],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected title = 'demo-app';
