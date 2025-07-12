@@ -16,6 +16,8 @@ import { HttpClient } from '@angular/common/http';
 export class App implements OnInit{
   protected title = 'demo-app';
 
+  isLoading = true;
+
   users: ComplexUser[] = [];
 
 
@@ -29,7 +31,10 @@ export class App implements OnInit{
     // });
 
     this.userService.getUsers().subscribe((users) => {
-      this.users = users;
+      setTimeout(() => {
+        this.users = users;
+        this.isLoading = false;
+      }, 2000);
     });
   }
 
