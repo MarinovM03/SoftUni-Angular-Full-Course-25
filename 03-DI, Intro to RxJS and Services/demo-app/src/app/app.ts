@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserList } from './user-list/user-list';
 import { SimpleUser } from './types';
@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit{
   protected title = 'demo-app';
 
   users: SimpleUser[] = [];
@@ -21,6 +21,12 @@ export class App {
 
   constructor(private userService: UserService) {
     this.users = this.userService.appUsers;
+  }
+
+  ngOnInit() {
+    this.userService.getUsers().then((users) => {
+      this.users = users;
+    });
   }
 
   handleClick() {

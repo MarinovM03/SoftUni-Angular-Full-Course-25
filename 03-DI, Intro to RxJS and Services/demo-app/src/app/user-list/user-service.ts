@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { SimpleUser } from '../types';
+import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
 //   providedIn: 'root'  // Global!
@@ -7,13 +8,15 @@ import { SimpleUser } from '../types';
 
 @Injectable()
 export class UserService implements OnDestroy{
-  appUsers: SimpleUser[] = [
-    { name: 'Martin', age: 21},
-    { name: 'Ivo', age: 34},
-    { name: 'Peter', age: 42},
-  ];
+  URL = 'https://jsonplaceholder.typicode.com/users';
+  appUsers: SimpleUser[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  getUsers() {
+    return fetch(this.URL).then((res) => res.json());
+    // return this.http.get(this.URL);
+  }
 
   ngOnDestroy(): void {
     // Unsubscribe from events
