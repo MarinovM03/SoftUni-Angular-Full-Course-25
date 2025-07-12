@@ -1,4 +1,4 @@
-import { interval, Observable, timer } from "rxjs";
+import { interval, map, Observable, timer } from "rxjs";
 
 // PROMISES
 // - Promise - are not lazy, code invokes!
@@ -61,6 +61,6 @@ p.then((data) => console.log('Promise: ', data))
 //     return o;
 // }
 
-interval(2000).subscribe((data) => {
-    console.log(data);
-});
+interval(2000).pipe(map((x) => x * 2))
+    .pipe(map((x) => x * 10))
+    .subscribe((x) => console.log(x));
