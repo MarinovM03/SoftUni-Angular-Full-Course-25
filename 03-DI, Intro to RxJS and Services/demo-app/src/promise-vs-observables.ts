@@ -1,4 +1,4 @@
-import { interval, map, Observable, timer } from "rxjs";
+import { interval, map, Observable, range, tap, timer } from "rxjs";
 
 // PROMISES
 // - Promise - are not lazy, code invokes!
@@ -72,3 +72,8 @@ stream$.subscribe({
     error: (err) => console.error('Error: ', err),
     complete: () => console.log('The stream has been completed!'),
 })
+
+
+const obs = range(1, 10).pipe(tap((x) => console.log('Hello:: ', x)));
+
+obs.subscribe((x) => console.log(x));
