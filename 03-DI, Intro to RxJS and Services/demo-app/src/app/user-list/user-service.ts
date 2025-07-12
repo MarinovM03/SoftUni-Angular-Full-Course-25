@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { SimpleUser } from '../types';
+import { ComplexUser } from '../types';
 import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
@@ -9,13 +9,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class UserService implements OnDestroy{
   URL = 'https://jsonplaceholder.typicode.com/users';
-  appUsers: SimpleUser[] = [];
+  appUsers: ComplexUser[] = [];
 
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return fetch(this.URL).then((res) => res.json());
-    // return this.http.get(this.URL);
+    // return fetch(this.URL).then((res) => res.json());
+    return this.http.get<ComplexUser[]>(this.URL);
   }
 
   ngOnDestroy(): void {
@@ -28,7 +28,7 @@ export class UserService implements OnDestroy{
       age: Number(inputAge.value),
     };
 
-    this.appUsers.push(user);
+    // this.appUsers.push(user);
     // this.appUsers = [...this.appUsers, user];  //! Important `HACK` we can use
 
     inputName.value = '';

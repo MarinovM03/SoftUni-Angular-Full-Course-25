@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserList } from './user-list/user-list';
-import { SimpleUser } from './types';
+import { ComplexUser } from './types';
 import { UserService } from './user-list/user-service';
 import { HttpClient } from '@angular/common/http';
 
@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export class App implements OnInit{
   protected title = 'demo-app';
 
-  users: SimpleUser[] = [];
+  users: ComplexUser[] = [];
 
 
   constructor(private userService: UserService) {
@@ -24,7 +24,11 @@ export class App implements OnInit{
   }
 
   ngOnInit() {
-    this.userService.getUsers().then((users) => {
+    // this.userService.getUsers().then((users) => {
+    //   this.users = users;
+    // });
+
+    this.userService.getUsers().subscribe((users) => {
       this.users = users;
     });
   }

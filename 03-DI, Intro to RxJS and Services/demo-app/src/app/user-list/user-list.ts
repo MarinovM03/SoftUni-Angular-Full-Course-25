@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { UserItem } from './user-item/user-item';
-import { SimpleUser } from '../types';
+import { ComplexUser } from '../types';
 import { UserService } from './user-service';
 
 @Component({
@@ -12,7 +12,7 @@ import { UserService } from './user-service';
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserList implements OnChanges {
-  @Input('users') usersList: SimpleUser[] = [];
+  @Input('users') usersList: ComplexUser[] = [];
 
   constructor(private cd: ChangeDetectorRef, private us: UserService) {}
 
