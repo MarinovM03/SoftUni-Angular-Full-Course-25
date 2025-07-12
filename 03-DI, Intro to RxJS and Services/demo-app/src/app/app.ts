@@ -8,7 +8,7 @@ import { UserService } from './user-list/user-service';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, UserList],
-  // providers: [],
+  providers: [UserService],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

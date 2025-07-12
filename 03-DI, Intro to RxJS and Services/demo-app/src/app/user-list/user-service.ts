@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { SimpleUser } from '../types';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'  // Global!
+// })
 export class UserService {
   appUsers: SimpleUser[] = [
     { name: 'Martin', age: 21},
     { name: 'Ivo', age: 34},
     { name: 'Peter', age: 42},
   ];
+
+  constructor() { }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
     const user = {
@@ -26,6 +28,4 @@ export class UserService {
     console.log(this.appUsers);
     
   }
-
-  constructor() { }
 }
