@@ -61,6 +61,14 @@ p.then((data) => console.log('Promise: ', data))
 //     return o;
 // }
 
-interval(2000).pipe(map((x) => x * 2))
-    .pipe(map((x) => x * 10))
-    .subscribe((x) => console.log(x));
+const stream$ = interval(2000)
+    .pipe(map((x) => x * 2))
+    .pipe(map((x) => x * 10));
+
+// stream$.subscribe((x) => console.log(x));
+
+stream$.subscribe({
+    next: (data) => console.log(data),
+    error: (err) => console.error('Error: ', err),
+    complete: () => console.log('The stream has been completed!'),
+})
