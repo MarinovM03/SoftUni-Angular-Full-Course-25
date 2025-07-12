@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserList } from './user-list/user-list';
 import { SimpleUser } from './types';
 import { UserService } from './user-list/user-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
