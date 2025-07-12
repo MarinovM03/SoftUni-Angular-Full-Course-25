@@ -6,11 +6,11 @@ import { Observable } from "rxjs";
 
 // - Subscribes only to 1 value
 const p = new Promise((resolve, reject) => {
-  console.log('A promise has been initiated!');
-  
-  setTimeout(() => {
-    resolve(1000);
-  }, 3000);
+    console.log('A promise has been initiated!');
+    
+    setTimeout(() => {
+        resolve(1000);
+    }, 3000);
 });
 
 p.then((data) => console.log('Promise: ', data))
@@ -18,22 +18,25 @@ p.then((data) => console.log('Promise: ', data))
   .then()
   .catch(e => console.error(e));
   
-// Sync analogy
+  
+// Sync analogy - Promises
 [1].map((x) => x * 2).map((y) => y * 100);
+
+// Sync Analogy - Observables
+[1, 2, 3, 4].map((x) => x * 2).map((y) => y * 100);
 
 
 // Observables
 
-// Sync Analogy
-[1, 2, 3, 4].map((x) => x * 2).map((y) => y * 100);
-
-
+// - Observables are lazy
 const o = new Observable((observer) => {
-   setTimeout(() => {
-    observer.next(101);
-    observer.next(102);
-    observer.next(103);
-   }, 2000);
+    console.log('Hello from observable');
+
+    setTimeout(() => {
+        observer.next(101);
+        observer.next(102);
+        observer.next(103);
+    }, 2000);
 });
 
 o.subscribe((data) => {
