@@ -22,12 +22,15 @@ interface Company {
     bs: string;
 }
 
-export interface ComplexUser {
+interface UserDetails {
     id: number;
     name: string;
     username: string;
     email: string;
     phone: string;
+}
+
+export interface ComplexUser extends UserDetails{
     website: string;
     address: Address;
     company: Company;
