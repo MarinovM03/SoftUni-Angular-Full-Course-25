@@ -15,6 +15,6 @@ export class UserItem implements OnInit{
   constructor(private us: UserService) {}
 
   ngOnInit(): void {
-    console.log(this.user?.name + ' - ' + JSON.stringify(this.us.appUsers, null, 4));
+    // console.log(this.user?.name + ' - ' + JSON.stringify(this.us.appUsers, null, 4));
   }
 }

@@ -22,8 +22,7 @@ export class UserList implements OnChanges {
   }
 
   refreshList() {
-    console.log(this.us.appUsers);
-
+    // console.log(this.us.appUsers);
     this.cd.detectChanges();
   }
 }
