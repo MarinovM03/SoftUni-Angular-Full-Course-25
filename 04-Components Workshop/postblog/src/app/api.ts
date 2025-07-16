@@ -10,9 +10,15 @@ import { Theme } from './types/themes';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getPosts() {
+  getPosts(limit?: number) {
     const { apiUrl } = environment;
-    return this.http.get<Post>(`${apiUrl}/posts`);
+
+    let url = `${apiUrl}/posts`;
+    if (limit) {
+      url += `?limit=${limit}`;
+    }
+    
+    return this.http.get<Post>(url);
   }
 
   getThemes() {
