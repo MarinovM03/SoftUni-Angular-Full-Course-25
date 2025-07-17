@@ -18,11 +18,11 @@ export class ApiService {
       url += `?limit=${limit}`;
     }
     
-    return this.http.get<Post>(url);
+    return this.http.get<Post[]>(url);
   }
 
   getThemes() {
     const { apiUrl } = environment;
-    return this.http.get<Theme>(`${apiUrl}/themes`);
+    return this.http.get<Theme[]>(`${apiUrl}/themes`);
   }
 }
