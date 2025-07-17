@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api';
 
 @Component({
@@ -7,7 +7,7 @@ import { ApiService } from '../api';
   templateUrl: './themes-list.html',
   styleUrl: './themes-list.css'
 })
-export class ThemesListComponent {
+export class ThemesListComponent implements OnInit {
   constructor(private apiService: ApiService) {
 
   }
