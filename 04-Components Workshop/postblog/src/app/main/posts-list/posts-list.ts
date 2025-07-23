@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api';
-import { Post } from '../types/post';
-import { LoaderComponent } from '../shared/loader/loader';
+import { ApiService } from '../../api';
+import { Post } from '../../types/post';
+import { LoaderComponent } from '../../shared/loader/loader';
 
 @Component({
   selector: 'app-posts-list',
+  standalone: true,
   imports: [LoaderComponent],
   templateUrl: './posts-list.html',
   styleUrl: './posts-list.css'

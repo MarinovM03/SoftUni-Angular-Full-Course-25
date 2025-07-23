@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api';
-import { Theme } from '../types/themes';
-import { LoaderComponent } from '../shared/loader/loader';
+import { ApiService } from '../../api';
+import { Theme } from '../../types/themes';
+import { LoaderComponent } from '../../shared/loader/loader';
 
 @Component({
   selector: 'app-themes-list',
+  standalone: true,
   imports: [LoaderComponent],
   templateUrl: './themes-list.html',
   styleUrl: './themes-list.css'
