@@ -17,13 +17,4 @@ import { MainComponent } from './main/main';
 })
 export class App {
   protected title = 'postblog';
-
-
-  ngOnInit(): void {
-    // this.http
-    //   .get('https://angular-workshop-postblog-default-rtdb.europe-west1.firebasedatabase.app/product/.json')
-    //   .subscribe((x) => {
-    //     console.log(x);
-    //   });
-  }
 }
